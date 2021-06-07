@@ -1,0 +1,116 @@
+#sosyal ağ analizi
+library(igraph)
+
+#¦yönlendirilmiş grafik
+#1, 2'i takip eder
+PAK <- graph(c("PAK","İX"))
+
+
+
+plot(PAK,
+     vertex.color= "white",
+     vertex.size= 60,
+     edge.color= 'red')
+
+
+
+PAK
+degree(PAK, mode = 'all')
+degree(PAK, mode = 'in')
+degree(PAK, mode = 'out')
+diameter(PAK, directed = F, weights = NA)
+edge_density(PAK, loops = F)
+ecount(PAK)/(vcount(PAK)*(vcount(PAK)-1))
+ecount(PAK)
+vcount(PAK)
+reciprocity(PAK)
+closeness(PAK, mode = 'all', weights = NA)
+betweenness(PAK, directed = T, weights = NA) 
+edge.betweenness(PAK, directed = T, weights = NA)
+
+
+
+İX <- graph(c("İX","PAK"))
+
+plot(İX,
+     vertex.color= "white",
+     vertex.size= 60,
+     edge.color= 'red')
+
+
+
+İX
+degree(İX, mode = 'all')
+degree(İX, mode = 'in')
+degree(İX, mode = 'out')
+diameter(İX, directed = F, weights = NA)
+edge_density(İX, loops = F)
+ecount(İX)/(vcount(İX)*(vcount(İX)-1))
+ecount(İX)
+vcount(İX)
+reciprocity(İX)
+closeness(İX, mode = 'all', weights = NA)
+betweenness(İX, directed = T, weights = NA) 
+edge.betweenness(İX, directed = T, weights = NA)
+
+
+
+
+A <- graph(c("PAK","İX","İX","PAK"))
+A[]
+
+
+
+A
+degree(A, mode = 'all')
+degree(A, mode = 'in')
+degree(A, mode = 'out')
+diameter(A, directed = F, weights = NA)
+edge_density(A, loops = F)
+ecount(A)/(vcount(A)*(vcount(A)-1))
+ecount(A)
+vcount(A)
+reciprocity(A)
+closeness(A, mode = 'all', weights = NA)
+betweenness(A, directed = T, weights = NA) 
+edge.betweenness(A, directed = T, weights = NA)
+
+
+
+
+
+plot(A,
+     vertex.color= "black",
+     vertex.size= 10,
+     edge.arrow.size = 0.1,
+     edge.color= 'red')
+
+
+
+
+
+set.seed(1900)
+plot(A,
+     vertex.color ='black',
+     vertext.size = 2,
+     vertex.label.dist = 1.5,
+     edge.arrow.size = 0.1,
+     vertex.label.cex = 0.8)
+
+
+plot(A,
+     vertex.color ='black',
+     vertext.size = 2,
+     edge.arrow.size = 0.1,
+     vertex.label.cex = 0.8)
+
+
+
+#dereceleri ve düzenleri vurgulama
+set.seed(1900)
+plot(A,
+     vertex.color = rainbow(52),
+     edge.arrow.size = 0.1,
+     edge.length = 125,
+     layout = layout.fruchterman.reingold)
+
